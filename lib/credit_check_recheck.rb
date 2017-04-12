@@ -1,4 +1,3 @@
-require 'pry'
 class CreditCheck
 
   attr_reader :card_number
@@ -24,26 +23,24 @@ class CreditCheck
   end
 
   def double_every_2nd_digit_if_odd
-      numbers = card_number.split(//)
       doubled_n = []
-      (0...numbers.length).each do |index|
+      (0...card_number.length).each do |index|
         if index % 2 == 0
-          doubled_n << numbers[index].to_i
+          doubled_n << card_number[index].to_i
         else
-          doubled_n << numbers[index].to_i * 2
+          doubled_n << card_number[index].to_i * 2
         end
       end
       doubled_n
   end
 
   def double_every_2nd_digit_if_even
-      numbers = card_number.split(//)
       doubled_n = []
-      (0...numbers.length).each do |index|
+      (0...card_number.length).each do |index|
         if index % 2 == 1
-          doubled_n << numbers[index].to_i
+          doubled_n << card_number[index].to_i
         else
-          doubled_n << numbers[index].to_i * 2
+          doubled_n << card_number[index].to_i * 2
         end
       end
       doubled_n
@@ -51,7 +48,6 @@ class CreditCheck
 
   def turn_to_single
     double.map do |number|
-      # binding.pry
       if number > 9
         number - 9 
       else
