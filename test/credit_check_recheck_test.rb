@@ -14,7 +14,7 @@ class CreditCheckTest < Minitest::Test
   def test_if_doubles_every_other_number
     check = CreditCheck.new("79927398713")
 
-    output = check.double
+    output = check.double_every_2nd_digit
 
     assert_equal [7, 18, 9, 4, 7, 6, 9, 16, 7, 2, 3], output
   end
